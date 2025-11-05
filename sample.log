@@ -1,0 +1,15 @@
+2024-11-04 10:15:23 INFO [UserService] User login successful: user_id=12345, session=abc123
+2024-11-04 10:15:45 DEBUG [DatabasePool] Connection acquired from pool: conn_id=pool_001
+2024-11-04 10:16:12 ERROR [PaymentService] Payment processing failed: transaction_id=tx_789, error=insufficient_funds
+2024-11-04 10:16:15 WARN [SecurityModule] Failed login attempt: ip=192.168.1.100, user=admin, attempts=3
+2024-11-04 10:16:23 INFO [UserService] User logout: user_id=12345, session=abc123
+2024-11-04 10:17:01 ERROR [DatabasePool] Connection timeout: conn_id=pool_002, timeout=30s
+2024-11-04 10:17:15 INFO [OrderService] Order created: order_id=ord_456, user_id=67890, amount=99.99
+2024-11-04 10:17:30 DEBUG [CacheManager] Cache miss for key: user_profile_67890
+2024-11-04 10:17:45 ERROR [EmailService] Failed to send notification: user_id=67890, error=smtp_timeout
+2024-11-04 10:18:00 INFO [UserService] User login successful: user_id=67890, session=def456
+2024-11-04 10:18:30 WARN [RateLimiter] Rate limit exceeded: ip=192.168.1.200, endpoint=/api/users
+2024-11-04 10:19:00 ERROR [PaymentService] Payment processing failed: transaction_id=tx_790, error=invalid_card
+2024-11-04 10:19:15 INFO [SecurityModule] Password reset requested: user_id=12345, token=reset_789
+2024-11-04 10:19:45 DEBUG [DatabasePool] Connection released to pool: conn_id=pool_001
+2024-11-04 10:20:00 ERROR [ApiGateway] Service unavailable: service=recommendation_engine, status=503
