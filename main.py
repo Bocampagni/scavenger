@@ -21,17 +21,10 @@ async def main() -> None:
         max_tool_iterations=10,
     )
 
-    # Example queries - demonstrating log analysis capabilities
     await Console(
         orchestrator.run_stream(
             task="Search for all ERROR entries in the file sample.log and summarize what types of errors occurred"
         )
     )
-    await Console(
-        orchestrator.run_stream(
-            task="Find all PaymentService related entries in sample.log"
-        )
-    )
-
 
 asyncio.run(main())
