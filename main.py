@@ -1,12 +1,11 @@
-
 import asyncio
+
 from autogen_agentchat.agents import AssistantAgent
-from autogen_ext.models.openai import OpenAIChatCompletionClient
 from autogen_agentchat.ui import Console
+from autogen_ext.models.openai import OpenAIChatCompletionClient
+
 from config import Config
 from tools.log_agent import LogAgent
-
-
 
 
 async def main() -> None:
@@ -21,10 +20,18 @@ async def main() -> None:
         tools=[log_agent_instance.agent],
         max_tool_iterations=10,
     )
-    
+
     # Example queries - demonstrating log analysis capabilities
-    await Console(orchestrator.run_stream(task="Search for all ERROR entries in the file sample.log and summarize what types of errors occurred"))
-    await Console(orchestrator.run_stream(task="Find all PaymentService related entries in sample.log"))
+    await Console(
+        orchestrator.run_stream(
+            task="Search for all ERROR entries in the file sample.log and summarize what types of errors occurred"
+        )
+    )
+    await Console(
+        orchestrator.run_stream(
+            task="Find all PaymentService related entries in sample.log"
+        )
+    )
 
 
 asyncio.run(main())

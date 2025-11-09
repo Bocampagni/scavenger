@@ -12,7 +12,7 @@ class Config:
         "api_key": OPENAI_API_KEY,
         "model": MODEL,
         "base_url": BASE_URL,
-    }    
+    }
 
     @classmethod
     def validate(cls):
